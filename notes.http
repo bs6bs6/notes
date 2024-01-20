@@ -1,2 +1,10 @@
-GET https://z2v203uguh.execute-api.us-west-2.amazonaws.com/prod/notes
+GET https://wqvp78g8t2.execute-api.us-west-2.amazonaws.com/prod/notes
+###
+
+POST https://wqvp78g8t2.execute-api.us-west-2.amazonaws.com/prod/notes
+Content-Type: application/json
+
+{
+  "location": "London"
+}   
 ###

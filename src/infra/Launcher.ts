@@ -11,5 +11,5 @@ const lambdaStack = new LambdaStack(app, 'LambdaStack',{
     notesTable: dataStack.notesTable
 });
 new ApiStack(app, 'ApiStack', {
-    helloLambdaIntegration: lambdaStack.helloLambdaIntegeration
+    notesLambdaIntegration: lambdaStack.notesLambdaIntegeration
 })

@@ -3,7 +3,7 @@ import { LambdaIntegration, RestApi } from 'aws-cdk-lib/aws-apigateway'
 import {Construct} from 'constructs'
 
 interface ApiStackProps extends StackProps {
-    helloLambdaIntegration: LambdaIntegration
+    notesLambdaIntegration: LambdaIntegration
 }
 
 export class ApiStack extends Stack {
@@ -11,8 +11,10 @@ export class ApiStack extends Stack {
         super(scope, id, props)
 
         const api = new RestApi(this, 'NotesApi');
-        const NotesResource = api.root.addResource('notes');
-        NotesResource.addMethod('GET',props.helloLambdaIntegration);
+        const notesResource = api.root.addResource('notes');
+        notesResource.addMethod('GET',props.notesLambdaIntegration);
+        notesResource.addMethod('POST',props.notesLambdaIntegration);
+
 
     }
 }
