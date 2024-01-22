@@ -1,10 +1,16 @@
-GET https://wqvp78g8t2.execute-api.us-west-2.amazonaws.com/prod/notes
+@url = https://cwcks80523.execute-api.us-west-2.amazonaws.com/prod
+@token = eyJraWQiOiI0bjM5c2s5UzVmSkp5bTUyTDNldVFvaW8rSWJYM1Rtc1wvNGVuMWluRERFTT0iLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiJkNmM5MzIzOC1jOWQxLTQ5MmEtYmQzNS1mM2Q2OTQ2OTM4ZWYiLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl9pUHU0MlFOenkiLCJjb2duaXRvOnVzZXJuYW1lIjoidGVzdFVzZXIiLCJvcmlnaW5fanRpIjoiOTJkMmI2MGUtZmY2NS00YTQzLTkxNzktMTE3NWNiNTE2MzZmIiwiYXVkIjoiMW1yNjlpNGZkaWlzcG5mcjRhbWFqMDYxMTEiLCJldmVudF9pZCI6IjNmMTZiYTg5LWM0N2UtNDhmNC1hNGVkLTYwNWM5YzNlZTczMSIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNzA1ODk0NzkwLCJleHAiOjE3MDU4OTgzOTAsImlhdCI6MTcwNTg5NDc5MCwianRpIjoiNTY1YTQ1MDAtOWE0OC00YzFkLWI3NzItYjEyNWNkMjI3ZjYwIiwiZW1haWwiOiJnb25nc2hpcWkxN0BnbWFpbC5jb20ifQ.k4ZazB0n2MuzNLhE5dUFm91UF29R82Kf-6BrPTPfmwHowdOiXAjNlyAHYZi41gjG8t-WLXePmCA77i0oCQjVG0uPcz2r3NdS5RFjZakTxccfhohJQc0XMPrrv7TCyiXu9839B3ui6nPC2sjqPyjbIWhjBVwDI9amsenIGb1dtVsMxHo0zczt32ke2Q0O0f6BBmZRrhYu2yBzTYtp2rz8Ch8nDPCb8qW3lZnkIbxCULc92ey5sIB8x_NTcMolUm62V_vXr1b3siPttvG8tN8oxFZ0S6KjkHelrsPzKwg0ELbFHLh611g0m6iGYAk-yHEKeA2Hypaq-6f5tUUEyCP3tw
+GET {{url}}/notes
+Authorization: {{token}}
 ###
 
-POST https://wqvp78g8t2.execute-api.us-west-2.amazonaws.com/prod/notes
+POST {{url}}/notes
 Content-Type: application/json
 
 {
-  "location": "London"
+  "userid": "123",
+  "content": "test content",
+  "attachment": "test attachment",
+  "created_at": "11111111"
 }   
 ###

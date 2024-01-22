@@ -15,7 +15,11 @@ export class DataStack extends Stack {
 
         this.notesTable = new Table(this, 'NotesTable',{
             partitionKey: {
-                name: 'id',
+                name: 'userid',
+                type: AttributeType.STRING
+            },
+            sortKey:{
+                name: 'noteid',
                 type: AttributeType.STRING
             },
             tableName: `NoteTable-${suffix}`

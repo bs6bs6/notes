@@ -13,7 +13,9 @@ interface LambdaStackProps extends StackProps {
 }
 
 export class LambdaStack extends Stack { 
+    
     public readonly notesLambdaIntegeration: LambdaIntegration
+
     constructor(scope: Construct, id: string, props: LambdaStackProps) {
         super(scope, id, props)
 
@@ -28,8 +30,14 @@ export class LambdaStack extends Stack {
         
         notesLambda.addToRolePolicy(new PolicyStatement({
             effect: Effect.ALLOW,
-            actions: ['dynamodb:PutItem'],
-            resources: [props.notesTable.tableArn]
+            resources: [props.notesTable.tableArn],
+            actions: [
+                'dynamodb:PutItem',
+                'dynamodb:GetItem',
+                'dynamodb:Scan',
+                'dynamodb:UpdateItem',
+                'dynamodb:DeleteItem'
+            ],
         }))
 
         this.notesLambdaIntegeration = new LambdaIntegration(notesLambda)
