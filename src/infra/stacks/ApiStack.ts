@@ -1,5 +1,5 @@
 import { Stack,StackProps } from 'aws-cdk-lib'
-import { AuthorizationType, CognitoUserPoolsAuthorizer, LambdaIntegration, MethodOptions, RestApi } from 'aws-cdk-lib/aws-apigateway'
+import { AuthorizationType, CognitoUserPoolsAuthorizer, Cors, LambdaIntegration, MethodOptions, ResourceOptions, RestApi } from 'aws-cdk-lib/aws-apigateway'
 import { IUserPool } from 'aws-cdk-lib/aws-cognito'
 import {Construct} from 'constructs'
 
@@ -27,8 +27,13 @@ export class ApiStack extends Stack {
                 authorizerId: authorizer.authorizerId,
             }
         }
-
-        const notesResource = api.root.addResource('notes');
+        const optionsWithCors: ResourceOptions = {
+            defaultCorsPreflightOptions:{
+                allowOrigins: Cors.ALL_ORIGINS,
+                allowMethods: Cors.ALL_METHODS
+            }
+        }
+        const notesResource = api.root.addResource('notes',optionsWithCors);
         notesResource.addMethod('GET',props.notesLambdaIntegration,optionsWithAuth);
         notesResource.addMethod('POST',props.notesLambdaIntegration,optionsWithAuth);
         notesResource.addMethod('PUT',props.notesLambdaIntegration,optionsWithAuth);

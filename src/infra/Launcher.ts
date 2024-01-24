@@ -3,7 +3,7 @@ import { DataStack } from "./stacks/DataStack";
 import { LambdaStack } from "./stacks/LambdaStack";
 import { ApiStack } from "./stacks/ApiStack";
 import { AuthStack } from "./stacks/AuthStack";
-
+import { UIDelpoymentStack } from "./stacks/UIDeploymentStack";
 
 
 const app = new App();
@@ -17,3 +17,5 @@ new ApiStack(app, 'ApiStack', {
     notesLambdaIntegration: lambdaStack.notesLambdaIntegeration,
     userPool: authStack.userPool
 })
+
+new UIDelpoymentStack(app, 'UIDelpoymentStack')

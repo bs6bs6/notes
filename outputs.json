@@ -1,0 +1,21 @@
+{
+  "DataStack": {
+    "ExportsOutputFnGetAttNotesTableD0D0D2F1ArnE800F534": "arn:aws:dynamodb:us-west-2:437956307664:table/NoteTable-06bd16894e9f",
+    "ExportsOutputRefNotesTableD0D0D2F1AF56B6D4": "NoteTable-06bd16894e9f"
+  },
+  "AuthStack": {
+    "NoteUserPoolClientId": "1mr69i4fdiispnfr4amaj06111",
+    "NoteIdentityPoolId": "us-west-2:87ba5545-1740-4885-940b-28650970cda7",
+    "ExportsOutputFnGetAttNoteUserPool648B3ACEArn1084F360": "arn:aws:cognito-idp:us-west-2:437956307664:userpool/us-west-2_iPu42QNzy",
+    "NoteUserPoolId": "us-west-2_iPu42QNzy"
+  },
+  "UIDelpoymentStack": {
+    "NotesUrl": "dguq0bcnrpn2.cloudfront.net"
+  },
+  "LambdaStack": {
+    "ExportsOutputFnGetAttNotesLabmda1FB9D951Arn930E11F2": "arn:aws:lambda:us-west-2:437956307664:function:LambdaStack-NotesLabmda1FB9D951-fugDjIumzxjl"
+  },
+  "ApiStack": {
+    "NotesApiEndpoint602C11C3": "https://cwcks80523.execute-api.us-west-2.amazonaws.com/prod/"
+  }
+}
